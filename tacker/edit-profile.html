@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideTracker - Edit Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <header>
+        <div class="back-nav">
+            <a href="settings.html" class="back-link"><i data-feather="arrow-left"></i></a>
+            <span>Edit Profile</span>
+        </div>
+        <button class="save-link" id="updateProfileBtn">Done</button>
+    </header>
+
+    <main class="edit-profile-page">
+        <section class="avatar-upload">
+            <div class="profile-avatar large">
+                <span>JD</span>
+                <div class="camera-badge"><i data-feather="camera"></i></div>
+            </div>
+            <p>Change Profile Photo</p>
+        </section>
+
+        <form class="settings-form">
+            <div class="input-group">
+                <label>Full Name</label>
+                <div class="input-wrapper">
+                    <input type="text" value="John Doe">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <div class="input-wrapper">
+                    <input type="email" value="john.doe@example.com">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <div class="input-wrapper">
+                    <input type="tel" value="+1 234 567 890">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Vehicle Name</label>
+                <div class="input-wrapper">
+                    <input type="text" value="Tesla Model 3">
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        feather.replace();
+
+        document.getElementById('updateProfileBtn').onclick = () => {
+            alert("Profile updated successfully!");
+            window.location.href = 'settings.html';
+        };
+    </script>
+
+    <div id="photoSheetOverlay" class="sheet-overlay" onclick="closePhotoSheet()"></div>
+
+        <div id="photoActionSheet" class="action-sheet">
+            <div class="sheet-handle"></div>
+            <div class="sheet-body">
+                <h3>Change Profile Photo</h3>
+                <div class="action-options">
+                    <button class="action-item" onclick="handlePhotoAction('camera')">
+                        <i data-feather="camera"></i>
+                        <span>Take Photo</span>
+                    </button>
+                    <button class="action-item" onclick="handlePhotoAction('gallery')">
+                        <i data-feather="image"></i>
+                        <span>Choose from Library</span>
+                    </button>
+                    <button class="action-item delete" onclick="handlePhotoAction('remove')">
+                        <i data-feather="trash-2"></i>
+                        <span>Remove Current Photo</span>
+                    </button>
+                </div>
+                <button class="cancel-sheet-btn" onclick="closePhotoSheet()">Cancel</button>
+            </div>
+        </div>
+
+        <script>
+            const sheet = document.getElementById('photoActionSheet');
+            const overlay = document.getElementById('photoSheetOverlay');
+
+            // Triggered when clicking the Avatar or "Change Profile Photo" text
+            document.querySelector('.avatar-upload').onclick = () => {
+                sheet.classList.add('active');
+                overlay.classList.add('active');
+            };
+
+            function closePhotoSheet() {
+                sheet.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+
+            function handlePhotoAction(action) {
+                console.log("User selected:", action);
+                if(action === 'remove') {
+                    alert("Photo removed");
+                } else {
+                    alert("Opening " + action + "...");
+                }
+                closePhotoSheet();
+            }
+        </script>
+</body>
+</html>

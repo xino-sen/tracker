@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideTracker Mobile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">RIDE<span>TRACKER</span></div>
+        <div class="profile-icon"><i data-feather="user"></i></div>
+    </header>
+
+    <section class="map-container">
+        <div class="status-badge">● Live Tracking</div>
+        <div class="mock-map">
+            <div class="car-marker"></div>
+        </div>
+    </section>
+
+    <main>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i data-feather="navigation"></i>
+                <p>Total Dist.</p>
+                <h3>1,240 km</h3>
+            </div>
+            <div class="stat-card">
+                <i data-feather="battery"></i>
+                <p>Battery</p>
+                <h3>88%</h3>
+            </div>
+            <div class="stat-card active">
+                <i data-feather="map-pin"></i>
+                <p>Location</p>
+                <h3>Downtown</h3>
+            </div>
+            <div class="stat-card">
+                <i data-feather="shield"></i>
+                <p>Security</p>
+                <h3>Armed</h3>
+            </div>
+        </div>
+
+        <section class="activity">
+            <h3>Recent Trips</h3>
+            <div class="trip-item">
+                <div class="trip-info">
+                    <strong>Home to Office</strong>
+                    <span>Oct 24, 10:30 AM</span>
+                </div>
+                <div class="trip-meta">12.4 km</div>
+            </div>
+            <div class="trip-item">
+                <div class="trip-info">
+                    <strong>Grocery Store</strong>
+                    <span>Oct 23, 04:15 PM</span>
+                </div>
+                <div class="trip-meta">2.1 km</div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active"><i data-feather="home"></i></a>
+        <a href="map.html" class="nav-item"><i data-feather="map"></i></a>
+        <a href="activity.html" class="nav-item"><i data-feather="activity"></i></a>
+        <a href="settings.html" class="nav-item"><i data-feather="settings"></i></a>
+    </nav>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideTracker - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="auth-body">
+
+    <div class="auth-overlay">
+        <div class="auth-header">
+            <div class="logo">RIDE<span>TRACKER</span></div>
+            <p>Your journey, precisely tracked.</p>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+            <div class="input-group">
+                <label>Email Address</label>
+                <div class="input-wrapper">
+                    <i data-feather="mail"></i>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <div class="input-wrapper">
+                    <i data-feather="lock"></i>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <div class="auth-options">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Sign In</button>
+            
+            <p class="switch-auth">Don't have an account? <a href="register.html">Register</a></p>
+        </form>
+    </div>
+
+    <script>
+        feather.replace();
+
+        // Simple Navigation Logic
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Redirect to the home dashboard
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

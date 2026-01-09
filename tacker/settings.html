@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideTracker - Settings</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">RIDE<span>TRACKER</span></div>
+        <div class="profile-pic">JD</div>
+    </header>
+
+    <main class="settings-page">
+        <section class="profile-summary">
+            <div class="user-meta">
+                <h2>John Doe</h2>
+                <p>Premium Member • Pro Plan</p>
+            </div>
+            <button class="edit-btn" onclick="window.location.href='edit-profile.html'">Edit Profile</button>
+        </section>
+
+        <section class="settings-group">
+            <h3 class="group-title">Vehicle Settings</h3>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <i data-feather="bell"></i>
+                    <span>Speed Alerts</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-row" onclick="window.location.href='geofencing.html'" style="cursor: pointer;">
+                <div class="setting-info">
+                    <i data-feather="shield"></i>
+                    <span>Geofencing</span>
+                </div>
+                <i data-feather="chevron-right" class="chevron"></i>
+            </div>
+        </section>
+
+        <section class="settings-group">
+            <h3 class="group-title">Account & Security</h3>
+            <div class="setting-row" onclick="window.location.href='change-password.html'" style="cursor: pointer;">
+                <div class="setting-info">
+                    <i data-feather="lock"></i>
+                    <span>Change Password</span>
+                </div>
+                <i data-feather="chevron-right" class="chevron"></i>
+            </div>
+            <div class="setting-row" onclick="window.location.href='subscription.html'" style="cursor: pointer;">
+                <div class="setting-info">
+                    <i data-feather="credit-card"></i>
+                    <span>Subscription</span>
+                </div>
+                <i data-feather="chevron-right" class="chevron"></i>
+            </div>
+        </section>
+
+        <section class="settings-group">
+            <div class="setting-row logout" id="logoutBtn" style="cursor: pointer;">
+                <div class="setting-info">
+                    <i data-feather="log-out"></i>
+                    <span>Log Out</span>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            feather.replace();
+
+            // Logout Functionality
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                // Professional apps usually show a confirmation before logging out
+                const confirmLogout = confirm("Are you sure you want to log out?");
+                
+                if (confirmLogout) {
+                    // Optional: Clear any local storage/session data if you had any
+                    // localStorage.clear(); 
+                    
+                    // Redirect to login page
+                    window.location.href = 'login.html';
+                }
+            });
+        </script>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item"><i data-feather="home"></i></a>
+        <a href="map.html" class="nav-item"><i data-feather="map"></i></a>
+        <a href="activity.html" class="nav-item"><i data-feather="activity"></i></a>
+        <a href="settings.html" class="nav-item active"><i data-feather="settings"></i></a>
+    </nav>
+
+    <script>feather.replace();</script>
+</body>
+</html>

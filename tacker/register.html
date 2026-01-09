@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideTracker - Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="auth-body">
+
+    <div class="auth-overlay">
+        <div class="auth-header">
+            <div class="logo">RIDE<span>TRACKER</span></div>
+            <p>Join the future of fleet management.</p>
+        </div>
+
+        <form id="registerForm" class="auth-form">
+            <div class="input-group">
+                <label>Full Name</label>
+                <div class="input-wrapper">
+                    <i data-feather="user"></i>
+                    <input type="text" placeholder="e.g. Alex Rivera" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <div class="input-wrapper">
+                    <i data-feather="mail"></i>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Create Password</label>
+                <div class="input-wrapper">
+                    <i data-feather="lock"></i>
+                    <input type="password" placeholder="Min. 8 characters" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Vehicle Serial (Optional)</label>
+                <div class="input-wrapper">
+                    <i data-feather="cpu"></i>
+                    <input type="text" placeholder="RT-XXXX-XXXX">
+                </div>
+            </div>
+
+            <div class="auth-options">
+                <label class="terms">
+                    <input type="checkbox" required> I agree to the <span>Terms of Service</span>
+                </label>
+            </div>
+
+            <button type="submit" class="login-btn">Create Account</button>
+            
+            <p class="switch-auth">Already have an account? <a href="login.html">Sign In</a></p>
+        </form>
+    </div>
+
+    <script>
+        feather.replace();
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real app, you'd send this to your database
+            alert("Account created successfully!");
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

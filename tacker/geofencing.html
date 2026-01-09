@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideTracker - Geofencing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <header>
+        <div class="back-nav">
+            <a href="settings.html" class="back-link"><i data-feather="arrow-left"></i></a>
+            <span>Geofencing Zones</span>
+        </div>
+    </header>
+
+    <main class="geofence-page">
+        <div class="header-desc">
+            <p>Get notified when your vehicle enters or leaves specific areas.</p>
+        </div>
+
+        <section class="zones-list">
+            <div class="zone-card">
+                <div class="zone-info">
+                    <div class="zone-icon"><i data-feather="home"></i></div>
+                    <div>
+                        <h4>Home Safe Zone</h4>
+                        <span>Radius: 500m</span>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="zone-card">
+                <div class="zone-info">
+                    <div class="zone-icon"><i data-feather="briefcase"></i></div>
+                    <div>
+                        <h4>Office Parking</h4>
+                        <span>Radius: 100m</span>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <button class="add-zone-btn">
+            <i data-feather="plus"></i> Create New Zone
+        </button>
+        <div id="createZoneModal" class="full-modal">
+            <div class="modal-header">
+                <button onclick="closeModal()" class="close-btn"><i data-feather="x"></i></button>
+                <h3>New Safe Zone</h3>
+                <button onclick="saveZone()" class="save-link">Save</button>
+            </div>
+
+            <div class="modal-content">
+                <div class="map-picker-container">
+                    <div class="map-placeholder">
+                        <div class="target-crosshair"></div>
+                        <div class="zone-radius-preview"></div>
+                    </div>
+                    <p class="map-hint">Drag map to position center</p>
+                </div>
+
+                <div class="modal-controls">
+                    <div class="input-group">
+                        <label>Zone Name</label>
+                        <input type="text" placeholder="e.g. Grandma's House" id="zoneName">
+                    </div>
+                    
+                    <div class="radius-slider">
+                        <div class="label-row">
+                            <label>Radius</label>
+                            <span id="radiusVal">250m</span>
+                        </div>
+                        <input type="range" min="100" max="2000" value="250" oninput="updateRadius(this.value)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Logic to open/close modal
+            const modal = document.getElementById('createZoneModal');
+            
+            document.querySelector('.add-zone-btn').onclick = () => {
+                modal.classList.add('active');
+            };
+
+            function closeModal() {
+                modal.classList.remove('active');
+            }
+
+            function updateRadius(val) {
+                document.getElementById('radiusVal').innerText = val + 'm';
+            }
+
+            function saveZone() {
+                const name = document.getElementById('zoneName').value || "New Zone";
+                alert(`Success: "${name}" has been established.`);
+                closeModal();
+            }
+        </script>
+    </main>
+
+    <script>feather.replace();</script>
+</body>
+</html>

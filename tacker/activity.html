@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideTracker - Activity</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">RIDE<span>TRACKER</span></div>
+        <div class="header-action">Weekly Report</div>
+    </header>
+
+    <main class="activity-page">
+        <section class="overview-card">
+            <div class="chart-placeholder">
+                <div class="bar" style="height: 60%"></div>
+                <div class="bar" style="height: 80%"></div>
+                <div class="bar" style="height: 40%"></div>
+                <div class="bar" style="height: 90%"></div>
+                <div class="bar" style="height: 70%"></div>
+                <div class="bar" style="height: 50%"></div>
+                <div class="bar" style="height: 85%"></div>
+            </div>
+            <div class="overview-details">
+                <div>
+                    <span>Eco Score</span>
+                    <h3>92</h3>
+                </div>
+                <div>
+                    <span>Avg Speed</span>
+                    <h3>42 km/h</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-container">
+            <h3 class="section-title">Recent Trips</h3>
+            
+            <div class="timeline-item">
+                <div class="timeline-line">
+                    <div class="dot"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="trip-header">
+                        <h4>Morning Commute</h4>
+                        <span class="price">Free</span>
+                    </div>
+                    <p>8.2 km • 24 mins</p>
+                    <div class="trip-tags">
+                        <span>Safe Drive</span>
+                        <span>Low Fuel</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-line">
+                    <div class="dot"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="trip-header">
+                        <h4>City Center to Home</h4>
+                        <span class="price">$2.40</span>
+                    </div>
+                    <p>15.7 km • 45 mins</p>
+                    <div class="trip-tags">
+                        <span>Heavy Traffic</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item"><i data-feather="home"></i></a>
+        <a href="map.html" class="nav-item"><i data-feather="map"></i></a>
+        <a href="activity.html" class="nav-item active"><i data-feather="activity"></i></a>
+        <a href="settings.html" class="nav-item"><i data-feather="settings"></i></a>
+    </nav>
+
+    <script>feather.replace();</script>
+</body>
+</html>
